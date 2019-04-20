@@ -1,5 +1,7 @@
-
 class MyException extends Throwable{
+	public MyException() {
+		super();
+	}
 	public MyException(String message) {
 		super(message);
 	}
