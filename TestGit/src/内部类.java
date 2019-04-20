@@ -1,3 +1,4 @@
+
 public class ÄÚ²¿Àà {
 	public static void main(String[] args) {
 		Outer outer=new Outer();
