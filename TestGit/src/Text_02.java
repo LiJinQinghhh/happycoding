@@ -1,5 +1,6 @@
 /**李金清 3171104143（第二次作业）
  * 2.写一个例子，练习String对象与StringBuffer对象互相转换，测试StringBuffer类的添加、插入、删除、反转操作*/
+
 public class Text_02 {
 	public static void main(String[] args) {
 		String a="a";
