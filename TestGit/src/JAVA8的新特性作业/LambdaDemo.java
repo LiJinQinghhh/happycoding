@@ -9,51 +9,24 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;    
 public class LambdaDemo {
-	public static void main(String[] args) {}
+	public static void main(String[] args) {
 		
-		/**匿名内部类
-		IEat ieat2=new IEat(String color,String weight){
-			public void eat() {
-				System.out.println("eat banana");
-			}
-		};
-		ieat2.eat("32","");
-		//Lambda表达式
-		//好处：1.代码更加简洁 2.不会单独生成class文件
-		IEat ieat3=(String color,String weight)->{System.out.println("eat thing");};
-		ieat3.eat("casc"," ");
-		//带参数
-		IEat ieat4=(String thing,String weight)->{System.out.println("eat "+thing+",它重 "+weight);};
-		ieat4.eat("红苹果","2.2kg");
 	}
-}
-//只有一个抽象方法的接口
-interface IEat{
-	public void eat(String color,String weight);
-}
-class IEatImpl implements IEat{
-	public void eat(String color,String weight) {
-		System.out.println("eat apple");
-		
-	}}*/
-
-	public void ConsumerTest(){
-	    Consumer<Apple> consumer=(Apple app)->{System.out.println(app.getColor()+","+app.getWeight());};
-	    List<Apple> apps=Arrays.asList(new Apple("red", 120),new Apple("blue", 80),
-	            new Apple("green",100));
-	    ConsumerApple(apps,consumer);
-	}
-
-	private void ConsumerApple(List<Apple> apps, Consumer<Apple> consumer) {
-			// TODO Auto-generated method stub
-			
-		}
-
 	public static void ConsumerApple(Apple[]apps,Consumer<Apple>c){
 	    for(Apple app:apps){
 	        c.accept(app);
 	    }
 	}
+	public void ConsumerTest(){
+	    Consumer<Apple> consumer=(Apple app)->{System.out.println(app.getColor()+","+app.getWeight());};
+	    List<Apple> apps=Arrays.asList(new Apple("red", 90),new Apple("blue", 70),
+	            new Apple("green",99));
+	    ConsumerApple(apps,consumer);
+	}
+	private void ConsumerApple(List<Apple> apps, Consumer<Apple> consumer) {
+			// TODO Auto-generated method stub	
+		}
+	
 	public void SupplierTest(){
 	    Supplier<Apple> supplier=()->{return new Apple("hello supplier",999);};
 	    Apple app=supplier.get();
@@ -91,3 +64,28 @@ class IEatImpl implements IEat{
 	}
 
 }
+/**匿名内部类
+IEat ieat2=new IEat(String color,String weight){
+	public void eat() {
+		System.out.println("eat banana");
+	}
+};
+ieat2.eat("32","");
+//Lambda表达式
+//好处：1.代码更加简洁 2.不会单独生成class文件
+IEat ieat3=(String color,String weight)->{System.out.println("eat thing");};
+ieat3.eat("casc"," ");
+//带参数
+IEat ieat4=(String thing,String weight)->{System.out.println("eat "+thing+",它重 "+weight);};
+ieat4.eat("红苹果","2.2kg");
+}
+}
+//只有一个抽象方法的接口
+interface IEat{
+public void eat(String color,String weight);
+}
+class IEatImpl implements IEat{
+public void eat(String color,String weight) {
+System.out.println("eat apple");
+
+}}*/

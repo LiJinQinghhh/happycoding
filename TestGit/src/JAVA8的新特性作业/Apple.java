@@ -3,6 +3,7 @@ public class Apple {
 	//定义一个苹果类，有颜色和重量两个属性
 	private String color;
 	private float weight;
+	
 	public Apple(String color, float weight) {
 		super();
 		this.color = color;
@@ -13,6 +14,7 @@ public class Apple {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	//getter and setter 方法
 	public String getColor() {
 		return color;
 	}
