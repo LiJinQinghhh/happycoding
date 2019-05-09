@@ -3,6 +3,7 @@ package JAVA8的新特性作业;
 /**
  * 语法：(参数1，参数2)->{}*/
 //import java.util.function.Consumer;
+
 public class LambdaDemo {
 	
 	
