@@ -1,4 +1,5 @@
 package JAVA8的新特性作业;
+
 public class Apple {
 	//定义一个苹果类，有颜色和重量两个属性
 	private String color;
