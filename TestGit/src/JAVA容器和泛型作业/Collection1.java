@@ -43,11 +43,11 @@ public class Collection1{
 
 		Set<Student> set = new TreeSet<Student>();
 
-		Student s1 = new Student(1, "张三", 60);
+		Student s1 = new Student(1, "小红", 19);
 		set.add(s1);
-		Student s2 = new Student(2, "李四", 70);
+		Student s2 = new Student(2, "小李", 20);
 		set.add(s2);
-		Student s3 = new Student(3, "王五", 80);
+		Student s3 = new Student(3, "小芳", 21);
 		set.add(s3);
 
 		//用迭代器输出学生对象
