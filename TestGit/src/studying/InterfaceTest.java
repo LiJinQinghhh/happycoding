@@ -7,6 +7,8 @@ public class InterfaceTest {
 			mm.run();
 			mm.sleep();
 			System.out.println(mm.printInfo());
+			mm.print();
+			mm.print1();
 		}
 }
 //只能定义全局常量+抽象方法
@@ -17,6 +19,13 @@ interface Ieat{
 	void eat();
 	//public static final int NUM=10;等价于下面的语句
 	int NUM=10;
+	//新特性中增加的接口中唯一可以实现的一个方法
+	public default void print() {
+		System.out.println("接口的学习");
+	}
+	public default void print1() {
+		System.out.println("接口的使用");
+	}
 }
 interface Irun{
 	void run();
