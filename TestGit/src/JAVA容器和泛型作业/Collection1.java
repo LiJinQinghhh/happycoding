@@ -1,61 +1,101 @@
 package JAVA容器和泛型作业;
+
 import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 
-class Student extends Object implements Comparable<Student> {
-	int stuNo;
-	String name;
-	int score;
+//1.创建学生类，包含学号、姓名、综合测评总分。使用TreeSet保存学生对象，按测评总分排序。
+//如果分数相同，按姓名排序。 最后再用迭代器输出学生对象。
+public class Collection1 {
+	private static void TreeSetTest() {
+		Students s1 = new Students(43, "李金清", 88);
+		Students s2 = new Students(45, "张三", 58);
+		Students s3 = new Students(49, "小明", 58);
+		Students s4 = new Students(53, "王五", 82);
+		Students s5 = new Students(23, "张语文", 68);
+		Set<Students> students = new TreeSet<>();
+		students.add(s1);
+		students.add(s2);
+		students.add(s3);
+		students.add(s4);
+		students.add(s5);
+		// forEach遍历
+		System.out.println("-----------forEach遍历------------");
+		students.forEach((student) -> {
+			System.out.println(student);
+		});
+		// iterator遍历
+		System.out.println("-----------iterator遍历------------");
+		Iterator<Students> it = students.iterator();
+		while (it.hasNext()) {
+			System.out.println(it.next());
+		}
 
-	public Student(int stuNo, String name, int score) {
+	}
+
+	public static void main(String[] args) {
+		TreeSetTest();
+	}
+}
+
+class Students implements Comparable<Students> {
+	private int sid;
+	private String name;
+	private int score;
+
+	@Override
+	public int compareTo(Students o) {
+		if (this.sid == o.sid)
+			return 0;
+		else if (this.score == o.score) {
+			if (this.name.compareTo(o.name) == 0)
+				return this.sid - o.sid;
+			else
+				return this.name.compareTo(o.name);
+		} else
+			return this.score - o.score;
+		// TODO Auto-generated method stub
+	}
+
+	public Students(int sid, String name, int score) {
 		super();
-		this.stuNo = stuNo;
+		this.sid = sid;
 		this.name = name;
 		this.score = score;
 	}
 
-	@Override
-	public int compareTo(Student s) {
-		// TODO Auto-generated method stub
-		if (this.stuNo == s.stuNo)
-			return 0;
-		else if (this.score == s.score) {
-			if (this.name.compareTo(s.name) == 0)
-				return this.stuNo - s.stuNo;
-			else
-				return this.name.compareTo(s.name);
-		} else
-			return this.score - s.score;
+	public Students() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public String toString() {
-		return "Student [stuNo=" + stuNo + ", name=" + name + ", score=" + score + "]";
+		return "Students [sid=" + sid + ", name=" + name + ", score=" + score + "]";
 	}
 
-}
+	public int getSid() {
+		return sid;
+	}
 
-public class Collection1{
+	public void setSid(int sid) {
+		this.sid = sid;
+	}
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public String getName() {
+		return name;
+	}
 
-		Set<Student> set = new TreeSet<Student>();
+	public void setName(String name) {
+		this.name = name;
+	}
 
-		Student s1 = new Student(1, "小红", 19);
-		set.add(s1);
-		Student s2 = new Student(2, "小李", 20);
-		set.add(s2);
-		Student s3 = new Student(3, "小芳", 21);
-		set.add(s3);
+	public int getScore() {
+		return score;
+	}
 
-		//用迭代器输出学生对象
-		Iterator<Student> it= set.iterator();
-		while( it.hasNext() ) {
-			Student s4=it.next();
-		}
-		System.out.println(set);
+	public void setScore(int score) {
+		this.score = score;
 	}
 
 }
